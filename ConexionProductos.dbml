@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="miDB" Class="ConexionProductosDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-G3SPV0O;Initial Catalog=miDB;Integrated Security=True;Encrypt=True;Trust Server Certificate=True" SettingsObjectName="crudProducts.Properties.Settings" SettingsPropertyName="miDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Products" Member="Products">
+    <Type Name="Products">
+      <Column Name="ProductID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProductName" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="UnitPrice" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="UnitsInStock" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.ActualizarProducto_Test" Method="ActualizarProducto_Test">
+    <Parameter Name="NombreProducto" Parameter="nombreProducto" Type="System.String" DbType="NVarChar(40)" />
+    <Parameter Name="PrecioUnidad" Parameter="precioUnidad" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="Cantidad" Parameter="cantidad" Type="System.Int16" DbType="SmallInt" />
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.EliminarProducto_Test" Method="EliminarProducto_Test">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.InsertarProductos_Test" Method="InsertarProductos_Test">
+    <Parameter Name="NombreProducto" Parameter="nombreProducto" Type="System.String" DbType="NVarChar(40)" />
+    <Parameter Name="PrecioUnidad" Parameter="precioUnidad" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="Cantidad" Parameter="cantidad" Type="System.Int16" DbType="SmallInt" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.LeerProducto_Test" Method="LeerProducto_Test">
+    <ElementType Name="LeerProducto_TestResult">
+      <Column Name="ProductID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProductName" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="UnitPrice" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="UnitsInStock" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>
